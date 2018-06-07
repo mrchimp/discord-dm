@@ -1,23 +1,17 @@
-require('dotenv').load();
-const mongoose = require('mongoose');
+// require('dotenv').load();
 
-before(function (done) {
-  mongoose.connect(process.env.MONGODB_HOST).then(() => {
-    done();
-  }).catch(function (error) {
-    console.log('CONNECTION ERROR: ', error);
-  });
-});
+// const connection = require('../Database/Connection.js');
 
-beforeEach(function (done) {
-  mongoose.connection.collections.players.drop(() => {
-    done();
-  });
-});
+// var Player = require('../Models/Player')(connection);
 
-after(function (done) {
-  mongoose.connection.collections.players.drop(() => {
-    mongoose.disconnect();
-    done();
-  });
-});
+// beforeEach(function (done) {
+//   connection.sync().then(() => {
+//     done();
+//   }).catch(function (error) {
+//     console.log('CONNECTION ERROR: ', error);
+//   });
+// });
+
+// after(function (done) {
+//   connection.close();
+// });
